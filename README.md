@@ -19,11 +19,12 @@ You could also automate the model generation if you like.
 
 ### Steps
 
-Simply clone the repository. That's all you have to do. There is a shell script included in the root folder of the project whcih you can use to generate your entities. No installation via NPM required.
+Simply clone the repository and install the reuqired packages using NPM. There is a shell script included in the root folder of the project whcih you can use to generate your entities. 
 
 ```bash
 git clone https://github.com/MarkusDanilow/MadBuilder.git
 cd MadBuilder
+npm i 
 ```
 
 ## Usage
