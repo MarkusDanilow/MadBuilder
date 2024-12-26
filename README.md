@@ -1,6 +1,8 @@
 # MadBuilder
 
 MadBuilder is a powerful YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks.
+It's written in TypeScript. But it's supposed to support a huge range of languages in the future. So it comes with a shell script that you can execute to generate your model files from a bunch of different tech-stacks. 
+You could also automate the model generation if you like.
 
 ## Features
 
