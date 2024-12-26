@@ -1,0 +1,32 @@
+Event:
+  contexts: ["db", "read", "create", "update"]
+  fields: 
+    - name: "id"
+      type: "string"
+      format: "uuid"
+      required: true
+      contexts: ["read", "db"]
+    - name: "name"
+      type: "string"
+      required: true
+      minLength: 5
+      maxLength: 48
+    - name: "description"
+      type: "string"
+      required: false
+      minLength: 10
+      maxLength: 256
+    - name: "start"
+      type: "date"
+      required: true
+    - name: "end"
+      type: "date"
+      required: true
+    - name: "responsibleEmail"
+      type: "string"
+      format: "email"
+      required: true
+    - name: "onlyForCreation"
+      type: "string"
+      required: true
+      contexts: ["create", "update"]

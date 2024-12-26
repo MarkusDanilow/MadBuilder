@@ -1,0 +1,22 @@
+{
+  "name": "madmodelsync",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fs": "^0.0.1-security",
+    "typescript": "^5.7.2",
+    "yaml": "^2.6.1",
+    "yargs": "^17.7.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.1",
+    "@types/yargs": "^17.0.33"
+  }
+}
