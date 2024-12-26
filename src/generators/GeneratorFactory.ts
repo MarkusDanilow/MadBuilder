@@ -1,5 +1,6 @@
 import { Generator } from "./Generator";
 import { PythonGenerator } from "./PythonGenerator";
+import { PrismaGenerator } from "./typescript/PrismaGenerator";
 import { TypeOrmGenerator } from "./typescript/TypeOrmGenerator";
 import { TypescriptGenerator } from "./typescript/TypescriptGenerator";
 import { ZodGenerator } from "./typescript/ZodGenerator";
@@ -15,7 +16,7 @@ export class GeneratorFactory {
         "typescript": new TypescriptGenerator(),
         "typescript:zod": new ZodGenerator(),
         "typescript:typeorm": new TypeOrmGenerator(),
-        "typescript:prisma": new TypescriptGenerator(),
+        "typescript:prisma": new PrismaGenerator(),
 
         // Python
         "python": new PythonGenerator(),

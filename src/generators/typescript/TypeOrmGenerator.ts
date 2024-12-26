@@ -71,7 +71,7 @@ export class TypeOrmGenerator extends Generator {
         return typeMapping[type.toLowerCase()] || "text";
     }
 
-    getFieldType(type: string): string {
+     getFieldType(type: string): string {
         const typeMapping: { [key: string]: string } = {
             int: "number",
             string: "string",

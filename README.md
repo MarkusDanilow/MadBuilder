@@ -28,22 +28,21 @@ cd MadBuilder
 
 ### Example Input
 
-First of all you need to define your entity using a YAML file. Example files for entity definitions can be found in subfolder `example-yaml`. 
+First of all you need to define your entity using a YAML file. Example files for entity definitions can be found in subfolder `example-yaml`.
 
 ```yaml
-# Example entity definition for an event 
+# Example entity definition for an event
 Event:
-  
-  # all possible contexts this entity can occur in. 
-  # The "db" context is a fixed keyword for generating the database entity.  
+  # all possible contexts this entity can occur in.
+  # The "db" context is a fixed keyword for generating the database entity.
   contexts: ["db", "read", "create", "update"]
 
   # next we define the all possible fields for the entity.
   # each field needs to have a name, a type, and whether it's required.
-  # optionally you can define a format, min and max length for strings, min and max value for numbers, and a set of contexts the field should be included. 
+  # optionally you can define a format, min and max length for strings, min and max value for numbers, and a set of contexts the field should be included.
   # If no context is defined, the field will be included in all generated entity files.
-  fields: 
-    - name: "id" 
+  fields:
+    - name: "id"
       type: "string"
       format: "uuid"
       required: true
@@ -81,8 +80,8 @@ To generate your entities from the YAML file, simlpy execute the shell script al
 # general command with placeholders
 ./madbuilder.sh <path-to-input-file.yaml> <path-to-output-file> <language> [<library>]
 
-# example command for typescript generating typescript files for the event 
-./madbuilder.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.dto.ts typescript 
+# example command for typescript generating typescript files for the event
+./madbuilder.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.dto.ts typescript
 
 # example command for typescript generating TypeORM entity in typescript
 ./madbuilder.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.entity.ts typescript typeorm
@@ -97,46 +96,45 @@ The following files have been genereated using the commands from above.
 /* generated DTOs for the event in TypeScript */
 
 export interface EventRead {
-/** @format uuid */
+  /** @format uuid */
   id: string;
-/** @minLength 5, @maxLength 48 */
+  /** @minLength 5, @maxLength 48 */
   name: string;
-/** @minLength 10, @maxLength 256 */
+  /** @minLength 10, @maxLength 256 */
   description?: string;
   start: Date;
   end: Date;
-/** @format email */
+  /** @format email */
   responsibleEmail: string;
 }
 
 export interface EventCreate {
-
-/** @minLength 5, @maxLength 48 */
+  /** @minLength 5, @maxLength 48 */
   name: string;
-/** @minLength 10, @maxLength 256 */
+  /** @minLength 10, @maxLength 256 */
   description?: string;
   start: Date;
   end: Date;
-/** @format email */
+  /** @format email */
   responsibleEmail: string;
   onlyForCreation: string;
 }
 
 export interface EventUpdate {
-/** @minLength 5, @maxLength 48 */
+  /** @minLength 5, @maxLength 48 */
   name: string;
-/** @minLength 10, @maxLength 256 */
+  /** @minLength 10, @maxLength 256 */
   description?: string;
   start: Date;
   end: Date;
-/** @format email */
+  /** @format email */
   responsibleEmail: string;
   onlyForCreation: string;
 }
 ```
 
 ```ts
-/* generated TypeORM entity for the event */ 
+/* generated TypeORM entity for the event */
 
 import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
 
@@ -159,7 +157,7 @@ export class EventDb {
 
 ## Supported Languages and Libraries
 
-| Language    | Libraries/Frameworks               |
-|-------------|------------------------------------|
-| typescript  | typeorm, zod                      |
-| python      |                                    |
+| Language   | Libraries/Frameworks |
+| ---------- | -------------------- |
+| typescript | typeorm, zod, prisma |
+| python     |                      |

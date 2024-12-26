@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneratorFactory = void 0;
 const PythonGenerator_1 = require("./PythonGenerator");
+const PrismaGenerator_1 = require("./typescript/PrismaGenerator");
 const TypeOrmGenerator_1 = require("./typescript/TypeOrmGenerator");
 const TypescriptGenerator_1 = require("./typescript/TypescriptGenerator");
 const ZodGenerator_1 = require("./typescript/ZodGenerator");
@@ -23,7 +24,7 @@ GeneratorFactory.generatorRegistry = {
     "typescript": new TypescriptGenerator_1.TypescriptGenerator(),
     "typescript:zod": new ZodGenerator_1.ZodGenerator(),
     "typescript:typeorm": new TypeOrmGenerator_1.TypeOrmGenerator(),
-    "typescript:prisma": new TypescriptGenerator_1.TypescriptGenerator(),
+    "typescript:prisma": new PrismaGenerator_1.PrismaGenerator(),
     // Python
     "python": new PythonGenerator_1.PythonGenerator(),
 };
