@@ -19,7 +19,7 @@ You could also automate the model generation if you like.
 
 ### Steps
 
-Simply clone the repository and install the reuqired packages using NPM. There is a shell script included in the root folder of the project whcih you can use to generate your entities. 
+Simply clone the repository and install the reuqired packages using NPM. 
 
 ```bash
 git clone https://github.com/MarkusDanilow/MadBuilder.git
@@ -77,7 +77,7 @@ Event:
       contexts: ["create", "update"]
 ```
 
-To generate your entities from the YAML file, simlpy execute the shell script already mentioned above.
+To generate your entities from the YAML file, simlpy execute the shell script that is included in the root folder of the project.
 
 ```bash
 # general command with placeholders
