@@ -157,7 +157,9 @@ export class EventDb {
 
 ## Supported Languages and Libraries
 
-| Language   | Libraries/Frameworks |
-| ---------- | -------------------- |
-| typescript | typeorm, zod, prisma |
-| python     |                      |
+| Language   | Language Command | Libraries/Frameworks | Libraries/Frameworks Command |
+| ---------- | ---------------- | -------------------- | ---------------------------- |
+| TypeScript | typescript, ts   | TypeORM, ZOD, Prisma | typeorm, zod, prisma         |
+| Python     | python, py       |                      |                              |
+| Java       | java             |                      |                              |
+| C#         | csharp, cs       |                      |                              |

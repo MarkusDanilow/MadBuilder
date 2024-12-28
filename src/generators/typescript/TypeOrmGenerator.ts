@@ -1,9 +1,9 @@
-import { Generator } from "../Generator";
+import { GenerationResult, Generator } from "../Generator";
 import { Entity } from "../../parser/Parser";
 
 export class TypeOrmGenerator extends Generator {
 
-    generate(entities: Entity[]): string {
+    generate(entities: Entity[]): string | GenerationResult[] {
         return entities
             .map((entity) => {
                 const className = entity.name;
@@ -71,7 +71,7 @@ export class TypeOrmGenerator extends Generator {
         return typeMapping[type.toLowerCase()] || "text";
     }
 
-     getFieldType(type: string): string {
+    getFieldType(type: string): string {
         const typeMapping: { [key: string]: string } = {
             int: "number",
             string: "string",

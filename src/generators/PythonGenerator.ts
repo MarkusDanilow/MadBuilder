@@ -1,6 +1,6 @@
 import path from "path";
 import { Entity } from "../parser/Parser";
-import { Generator } from "./Generator";
+import { GenerationResult, Generator } from "./Generator";
 import * as fs from "fs";
 
 
@@ -11,7 +11,7 @@ export class PythonGenerator extends Generator {
      * @param entities 
      * @returns 
      */
-    generate(entities: Entity[]): string {
+    generate(entities: Entity[]): string | GenerationResult[] {
         return entities
             .map((entity) => {
                 const className = entity.name;

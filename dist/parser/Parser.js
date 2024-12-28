@@ -6,6 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.parseYAML = parseYAML;
 exports.filterByContext = filterByContext;
 exports.generateAll = generateAll;
+exports.getFileExtensionForLanguage = getFileExtensionForLanguage;
 const fs_1 = __importDefault(require("fs"));
 const yaml_1 = require("yaml");
 const Utils_1 = require("../util/Utils");
@@ -62,4 +63,16 @@ function generateAll(entities) {
         }
     });
     return generatedEntities;
+}
+function getFileExtensionForLanguage(language) {
+    switch (language) {
+        case "typescript":
+        case "ts": return "ts";
+        case "python":
+        case "py": return "py";
+        case "csharp":
+        case "cs": return "cs";
+        case "java": return "java";
+        default: throw "Unsupported language!";
+    }
 }

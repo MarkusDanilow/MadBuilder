@@ -1,6 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneratorFactory = void 0;
+const CSharpGenerator_1 = require("./csharp/CSharpGenerator");
+const JavaGenerator_1 = require("./java/JavaGenerator");
 const PythonGenerator_1 = require("./PythonGenerator");
 const PrismaGenerator_1 = require("./typescript/PrismaGenerator");
 const TypeOrmGenerator_1 = require("./typescript/TypeOrmGenerator");
@@ -22,9 +24,16 @@ exports.GeneratorFactory = GeneratorFactory;
 GeneratorFactory.generatorRegistry = {
     // Typescript 
     "typescript": new TypescriptGenerator_1.TypescriptGenerator(),
+    "ts": new TypescriptGenerator_1.TypescriptGenerator(),
     "typescript:zod": new ZodGenerator_1.ZodGenerator(),
     "typescript:typeorm": new TypeOrmGenerator_1.TypeOrmGenerator(),
     "typescript:prisma": new PrismaGenerator_1.PrismaGenerator(),
     // Python
     "python": new PythonGenerator_1.PythonGenerator(),
+    "py": new PythonGenerator_1.PythonGenerator(),
+    // C#
+    "csharp": new CSharpGenerator_1.CSharpGenerator(),
+    "cs": new CSharpGenerator_1.CSharpGenerator(),
+    // Java 
+    "java": new JavaGenerator_1.JavaGenerator(),
 };

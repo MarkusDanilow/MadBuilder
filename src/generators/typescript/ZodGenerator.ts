@@ -1,8 +1,9 @@
 import { Entity } from "../../parser/Parser";
-import { Generator } from "../Generator";
+import { GenerationResult, Generator } from "../Generator";
 
 export class ZodGenerator extends Generator {
-    generate(entities: Entity[]): string {
+    
+    generate(entities: Entity[]): string | GenerationResult[] {
         return "import { z } from 'zod'; \n\n" + entities
             .map((entity) => {
                 const schemaName = `${entity.name}Schema`;

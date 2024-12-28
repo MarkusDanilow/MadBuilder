@@ -1,9 +1,9 @@
-import { Generator } from "../Generator";
+import { GenerationResult, Generator } from "../Generator";
 import { Entity } from "../../parser/Parser";
 
 export class PrismaGenerator extends Generator {
 
-    generate(entities: Entity[]): string {
+    generate(entities: Entity[]): string | GenerationResult[] {
         return entities
             .map((entity) => {
                 const modelName = entity.name;

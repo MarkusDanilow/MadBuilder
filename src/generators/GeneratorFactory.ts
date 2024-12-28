@@ -1,4 +1,6 @@
+import { CSharpGenerator } from "./csharp/CSharpGenerator";
 import { Generator } from "./Generator";
+import { JavaGenerator } from "./java/JavaGenerator";
 import { PythonGenerator } from "./PythonGenerator";
 import { PrismaGenerator } from "./typescript/PrismaGenerator";
 import { TypeOrmGenerator } from "./typescript/TypeOrmGenerator";
@@ -14,12 +16,21 @@ export class GeneratorFactory {
     private static generatorRegistry: Record<string, Generator> = {
         // Typescript 
         "typescript": new TypescriptGenerator(),
+        "ts": new TypescriptGenerator(),
         "typescript:zod": new ZodGenerator(),
         "typescript:typeorm": new TypeOrmGenerator(),
         "typescript:prisma": new PrismaGenerator(),
 
         // Python
         "python": new PythonGenerator(),
+        "py": new PythonGenerator(),
+
+        // C#
+        "csharp": new CSharpGenerator(),
+        "cs": new CSharpGenerator(),
+
+        // Java 
+        "java": new JavaGenerator(),
     };
 
 

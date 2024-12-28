@@ -7,6 +7,7 @@ const Parser_1 = require("./parser/Parser");
 const yargs_1 = __importDefault(require("yargs"));
 const helpers_1 = require("yargs/helpers");
 const GeneratorFactory_1 = require("./generators/GeneratorFactory");
+const path_1 = __importDefault(require("path"));
 const argv = (0, yargs_1.default)((0, helpers_1.hideBin)(process.argv))
     .option("file", {
     alias: "f",
@@ -18,7 +19,7 @@ const argv = (0, yargs_1.default)((0, helpers_1.hideBin)(process.argv))
     alias: "l",
     type: "string",
     description: "The language for the generated models",
-    choices: ["typescript", "python"],
+    choices: ["typescript", "ts", "python", "py", "csharp", "cs", "java"],
     demandOption: true
 })
     .option("library", {
@@ -47,12 +48,25 @@ const argv = (0, yargs_1.default)((0, helpers_1.hideBin)(process.argv))
         const language = argv.language;
         const library = argv.library;
         const outputPath = argv.output;
+        if (outputPath === undefined)
+            throw "You must define an output path!";
         const entities = (0, Parser_1.parseYAML)(filePath);
         const allEntities = (0, Parser_1.generateAll)(entities);
         const generator = GeneratorFactory_1.GeneratorFactory.getGenerator(language, library);
         const entities2Generate = generator.filterEntities(allEntities);
-        const output = generator.generate(entities2Generate);
-        generator.writeFiles(output, outputPath);
+        const outputContents = generator.generate(entities2Generate);
+        // if there are going to be multiple files generated: 
+        if (Array.isArray(outputContents)) {
+            const outputBasePath = path_1.default.dirname(outputPath);
+            const extension = (0, Parser_1.getFileExtensionForLanguage)(language);
+            outputContents.forEach((output, index) => {
+                generator.writeFiles(output.fileContent, `${outputBasePath}/${output.entityName}.${extension}`);
+            });
+        }
+        // otherwise: simply generate a single file for all generated entities
+        else {
+            generator.writeFiles(outputContents, outputPath);
+        }
     }
     catch (error) {
         if (error instanceof Error) {

@@ -76,3 +76,18 @@ export function generateAll(entities: Entity[]): Entity[] {
     })
     return generatedEntities;
 }
+
+
+
+export function getFileExtensionForLanguage(language: string): string {
+    switch (language) {
+        case "typescript":
+        case "ts": return "ts";
+        case "python":
+        case "py": return "py";
+        case "csharp":
+        case "cs": return "cs";
+        case "java": return "java";
+        default: throw "Unsupported language!";
+    }
+}
