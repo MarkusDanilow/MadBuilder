@@ -6,7 +6,7 @@ class TypeOrmGenerator extends Generator_1.Generator {
     generate(entities) {
         return entities
             .map((entity) => {
-            const className = entity.name;
+            const className = entity.name.toLowerCase().endsWith("db") ? entity.name.slice(0, -2) : entity.name;
             const fields = entity.fields
                 .map((field) => this.generateField(field))
                 .join("\n");

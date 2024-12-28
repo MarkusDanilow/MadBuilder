@@ -1,12 +1,12 @@
-# MadBuilder
+# MadEntitySync
 
-Welcome to **MadBuilder** – the ultimate YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks! Imagine effortlessly generating clean, maintainable code for various languages and frameworks without spending hours writing boilerplate code. That's exactly what MadBuilder offers!
+Welcome to **MadEntitySync** – the ultimate YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks! Imagine effortlessly generating clean, maintainable code for various languages and frameworks without spending hours writing boilerplate code. That's exactly what MadEntitySync offers!
 
 **Please note:** This is a hobby project and does not claim to be complete or fully comprehensive. Contributions and feedback are always welcome!
 
-## Why MadBuilder?
+## Why MadEntitySync?
 
-In today's fast-paced development world, time is a precious commodity. MadBuilder helps you save this valuable resource by automating the tedious and error-prone task of code generation. Whether you're working with TypeScript, Python, Java, or other languages – MadBuilder has the tools to take your productivity to the next level.
+In today's fast-paced development world, time is a precious commodity. MadEntitySync helps you save this valuable resource by automating the tedious and error-prone task of code generation. Whether you're working with TypeScript, Python, Java, or other languages – MadEntitySync has the tools to take your productivity to the next level.
 
 ### Features
 
@@ -15,7 +15,7 @@ In today's fast-paced development world, time is a precious commodity. MadBuilde
 - **Customizable Outputs**: Adapt templates for various use cases and frameworks.
 - **Synchronization**: Ensure consistent entity definitions across your tech stack.
 
-Get ready to revolutionize your development processes and discover the power of automated code generation with MadBuilder. Start today and experience how simple and efficient software development can be!
+Get ready to revolutionize your development processes and discover the power of automated code generation with MadEntitySync. Start today and experience how simple and efficient software development can be!
 
 ## Installation
 
@@ -28,12 +28,18 @@ Get ready to revolutionize your development processes and discover the power of 
 Simply clone the repository and install the required packages using NPM.
 
 ```bash
-git clone https://github.com/MarkusDanilow/MadBuilder.git
-cd MadBuilder
+git clone https://github.com/MarkusDanilow/MadEntitySync.git
+cd MadEntitySync
 npm install
 ```
 
 ## Usage
+
+MadEntitySync is designed to be easy to use. Follow these steps to get started:
+
+1. **Define Your Entities**: Create a YAML file to define your data entities and their contexts.
+2. **Generate Code**: Run the MadEntitySync command to generate code for your desired programming language and framework.
+3. **Integrate**: Integrate the generated code into your project.
 
 ### Example Input
 
@@ -87,82 +93,36 @@ To generate your entities from the YAML file, simlpy execute the shell script th
 
 ```bash
 # general command with placeholders
-./madbuilder.sh <path-to-input-file.yaml> <path-to-output-file> <language> [<library>]
+./MadEntitySync.sh <path-to-input-file.yaml> <path-to-output-file> <language> [<library>]
 
 # example command for typescript generating typescript files for the event
-./madbuilder.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.dto.ts typescript
+./MadEntitySync.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.dto.ts typescript
 
 # example command for typescript generating TypeORM entity in typescript
-./madbuilder.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.entity.ts typescript typeorm
+./MadEntitySync.sh ./example-yaml/event.yaml ../ts-test/src/models/Event.entity.ts typescript typeorm
 
 ```
 
-### Example Output
+## Integration
 
-The following files have been genereated using the commands from above.
+After generating the code, you can integrate it into your project. For example, if you generated TypeScript code for a TypeORM entity, you can use it as follows:
 
 ```ts
-/* generated DTOs for the event in TypeScript */
+import { Event } from "./path/to/generated/Event";
 
-export interface EventRead {
-  /** @format uuid */
-  id: string;
-  /** @minLength 5, @maxLength 48 */
-  name: string;
-  /** @minLength 10, @maxLength 256 */
-  description?: string;
-  start: Date;
-  end: Date;
-  /** @format email */
-  responsibleEmail: string;
-}
-
-export interface EventCreate {
-  /** @minLength 5, @maxLength 48 */
-  name: string;
-  /** @minLength 10, @maxLength 256 */
-  description?: string;
-  start: Date;
-  end: Date;
-  /** @format email */
-  responsibleEmail: string;
-  onlyForCreation: string;
-}
-
-export interface EventUpdate {
-  /** @minLength 5, @maxLength 48 */
-  name: string;
-  /** @minLength 10, @maxLength 256 */
-  description?: string;
-  start: Date;
-  end: Date;
-  /** @format email */
-  responsibleEmail: string;
-  onlyForCreation: string;
-}
+const event = new Event();
+event.name = "Sample Event";
+event.start = new Date();
+event.end = new Date();
+event.responsibleEmail = "example@example.com";
 ```
 
-```ts
-/* generated TypeORM entity for the event */
+## Error Handling
 
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+If you encounter any errors, please refer to the following common issues and solutions:
 
-@Entity("eventdb")
-export class EventDb {
-  @PrimaryGeneratedColumn()
-  id: string;
-  @Column({ type: "varchar", length: 48 })
-  name: string;
-  @Column({ type: "varchar", nullable: true, length: 256 })
-  description?: string;
-  @Column({ type: "timestamp" })
-  start: Date;
-  @Column({ type: "timestamp" })
-  end: Date;
-  @Column({ type: "varchar" })
-  responsibleEmail: string;
-}
-```
+- Error: "Cannot find module": Ensure that you have installed all required dependencies.
+- Error: "Invalid YAML format": Check your YAML file for syntax errors.
 
 ## Supported Languages and Libraries
 
@@ -174,3 +134,15 @@ export class EventDb {
 | Java       | java             |                      |                              |
 | C#         | csharp, cs       |                      |                              |
 | PHP        | php              |                      |                              |
+
+## Contributing
+
+We welcome contributions from the community! If you'd like to contribute, please fork the repository and submit a pull request. Here are some ways you can contribute:
+
+- Add new language support: Implement generators for additional programming languages.
+- Improve documentation: Help us improve the documentation with more examples and use cases.
+- Report issues: If you find any bugs or have suggestions for improvements, please open an issue on GitHub.
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.

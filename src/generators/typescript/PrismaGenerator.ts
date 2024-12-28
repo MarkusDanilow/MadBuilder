@@ -6,7 +6,7 @@ export class PrismaGenerator extends Generator {
     generate(entities: Entity[]): string | GenerationResult[] {
         return entities
             .map((entity) => {
-                const modelName = entity.name;
+                const modelName = entity.name.toLowerCase().endsWith("db") ? entity.name.slice(0, -2) : entity.name;
                 const fields = entity.fields
                     .map((field) => this.generateField(field))
                     .join("\n");
