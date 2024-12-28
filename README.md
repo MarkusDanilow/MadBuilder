@@ -137,7 +137,7 @@ If you encounter any errors, please refer to the following common issues and sol
 
 ## Contributing
 
-We welcome contributions from the community! If you'd like to contribute, please fork the repository and submit a pull request. Here are some ways you can contribute:
+I welcome contributions from the community! If you'd like to contribute, please fork the repository and submit a pull request. Here are some ways you can contribute:
 
 - Add new language support: Implement generators for additional programming languages.
 - Improve documentation: Help us improve the documentation with more examples and use cases.
