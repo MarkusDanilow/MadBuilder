@@ -1,6 +1,8 @@
 # MadBuilder
 
 MadBuilder is a powerful YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks.
+It's written in TypeScript. But it's supposed to support a huge range of languages in the future. So it comes with a shell script that you can execute to generate your model files from a bunch of different tech-stacks. 
+You could also automate the model generation if you like.
 
 ## Features
 
@@ -17,11 +19,12 @@ MadBuilder is a powerful YAML-driven generator for creating consistent data enti
 
 ### Steps
 
-Simply clone the repository. That's all you have to do. There is a shell script included in the root folder of the project whcih you can use to generate your entities. No installation via NPM required.
+Simply clone the repository and install the reuqired packages using NPM. 
 
 ```bash
 git clone https://github.com/MarkusDanilow/MadBuilder.git
 cd MadBuilder
+npm i 
 ```
 
 ## Usage
@@ -74,7 +77,7 @@ Event:
       contexts: ["create", "update"]
 ```
 
-To generate your entities from the YAML file, simlpy execute the shell script already mentioned above.
+To generate your entities from the YAML file, simlpy execute the shell script that is included in the root folder of the project.
 
 ```bash
 # general command with placeholders
