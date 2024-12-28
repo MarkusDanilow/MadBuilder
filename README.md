@@ -1,15 +1,19 @@
 # MadBuilder
 
-MadBuilder is a powerful YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks.
-It's written in TypeScript. But it's supposed to support a huge range of languages in the future. So it comes with a shell script that you can execute to generate your model files from a bunch of different tech-stacks. 
-You could also automate the model generation if you like.
+Welcome to **MadBuilder** – the ultimate YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks! Imagine effortlessly generating clean, maintainable code for various languages and frameworks without spending hours writing boilerplate code. That's exactly what MadBuilder offers!
 
-## Features
+## Why MadBuilder?
 
-- YAML-Based Configuration: Define your data entities and their contexts (e.g., Read-DTO, Create-DTO) in an easy-to-read YAML format.
-- Multi-Language Support: Generate code for multiple programming languages (e.g., TypeScript, Python, Java).
-- Customizable Outputs: Adapt templates for various use cases and frameworks.
-- Synchronization: Ensure consistent entity definitions across your tech stack.
+In today's fast-paced development world, time is a precious commodity. MadBuilder helps you save this valuable resource by automating the tedious and error-prone task of code generation. Whether you're working with TypeScript, Python, Java, or other languages – MadBuilder has the tools to take your productivity to the next level.
+
+### Features
+
+- **YAML-Based Configuration**: Define your data entities and their contexts (e.g., Read-DTO, Create-DTO) in an easy-to-read YAML format.
+- **Multi-Language Support**: Generate code for multiple programming languages (e.g., TypeScript, Python, Java).
+- **Customizable Outputs**: Adapt templates for various use cases and frameworks.
+- **Synchronization**: Ensure consistent entity definitions across your tech stack.
+
+Get ready to revolutionize your development processes and discover the power of automated code generation with MadBuilder. Start today and experience how simple and efficient software development can be!
 
 ## Installation
 
@@ -19,12 +23,12 @@ You could also automate the model generation if you like.
 
 ### Steps
 
-Simply clone the repository and install the reuqired packages using NPM. 
+Simply clone the repository and install the required packages using NPM.
 
 ```bash
 git clone https://github.com/MarkusDanilow/MadBuilder.git
 cd MadBuilder
-npm i 
+npm install
 ```
 
 ## Usage
