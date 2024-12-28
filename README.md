@@ -167,6 +167,8 @@ export class EventDb {
 | Language   | Language Command | Libraries/Frameworks | Libraries/Frameworks Command |
 | ---------- | ---------------- | -------------------- | ---------------------------- |
 | TypeScript | typescript, ts   | TypeORM, ZOD, Prisma | typeorm, zod, prisma         |
+| JavaScript | javascript, js   |                      |                              |
 | Python     | python, py       |                      |                              |
 | Java       | java             |                      |                              |
 | C#         | csharp, cs       |                      |                              |
+| PHP        | php              |                      |                              |

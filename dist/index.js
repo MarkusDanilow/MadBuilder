@@ -19,7 +19,7 @@ const argv = (0, yargs_1.default)((0, helpers_1.hideBin)(process.argv))
     alias: "l",
     type: "string",
     description: "The language for the generated models",
-    choices: ["typescript", "ts", "python", "py", "csharp", "cs", "java"],
+    choices: ["typescript", "ts", "python", "py", "csharp", "cs", "java", "javascript", "js", "php"],
     demandOption: true
 })
     .option("library", {

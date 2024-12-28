@@ -1,6 +1,8 @@
 import { CSharpGenerator } from "./csharp/CSharpGenerator";
 import { Generator } from "./Generator";
 import { JavaGenerator } from "./java/JavaGenerator";
+import { JavaScriptGenerator } from "./javascript/JavascriptGenerator";
+import { PHPGenerator } from "./php/PhpGenerator";
 import { PythonGenerator } from "./PythonGenerator";
 import { PrismaGenerator } from "./typescript/PrismaGenerator";
 import { TypeOrmGenerator } from "./typescript/TypeOrmGenerator";
@@ -31,6 +33,13 @@ export class GeneratorFactory {
 
         // Java 
         "java": new JavaGenerator(),
+
+        // PHP
+        "php": new PHPGenerator(),
+
+        // JavaScript 
+        "javascript": new JavaScriptGenerator(),
+        "js": new JavaScriptGenerator()
     };
 
 

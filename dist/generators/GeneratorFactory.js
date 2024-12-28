@@ -3,6 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.GeneratorFactory = void 0;
 const CSharpGenerator_1 = require("./csharp/CSharpGenerator");
 const JavaGenerator_1 = require("./java/JavaGenerator");
+const JavascriptGenerator_1 = require("./javascript/JavascriptGenerator");
+const PhpGenerator_1 = require("./php/PhpGenerator");
 const PythonGenerator_1 = require("./PythonGenerator");
 const PrismaGenerator_1 = require("./typescript/PrismaGenerator");
 const TypeOrmGenerator_1 = require("./typescript/TypeOrmGenerator");
@@ -36,4 +38,9 @@ GeneratorFactory.generatorRegistry = {
     "cs": new CSharpGenerator_1.CSharpGenerator(),
     // Java 
     "java": new JavaGenerator_1.JavaGenerator(),
+    // PHP
+    "php": new PhpGenerator_1.PHPGenerator(),
+    // JavaScript 
+    "javascript": new JavascriptGenerator_1.JavaScriptGenerator(),
+    "js": new JavascriptGenerator_1.JavaScriptGenerator()
 };
