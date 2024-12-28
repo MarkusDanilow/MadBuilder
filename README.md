@@ -2,6 +2,8 @@
 
 Welcome to **MadBuilder** – the ultimate YAML-driven generator for creating consistent data entities and DTOs across multiple programming languages and frameworks! Imagine effortlessly generating clean, maintainable code for various languages and frameworks without spending hours writing boilerplate code. That's exactly what MadBuilder offers!
 
+**Please note:** This is a hobby project and does not claim to be complete or fully comprehensive. Contributions and feedback are always welcome!
+
 ## Why MadBuilder?
 
 In today's fast-paced development world, time is a precious commodity. MadBuilder helps you save this valuable resource by automating the tedious and error-prone task of code generation. Whether you're working with TypeScript, Python, Java, or other languages – MadBuilder has the tools to take your productivity to the next level.
